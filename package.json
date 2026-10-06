@@ -1,0 +1,25 @@
+{
+  "name": "garri-tms-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:public": "playwright test --project=public",
+    "test:auth": "playwright test --project=authenticated",
+    "test:login": "playwright test tests/public/authentication.spec.ts",
+    "test:session": "playwright test tests/authenticated/session.spec.ts",
+    "test:access": "playwright test tests/authenticated/access.spec.ts",
+    "test:dispatch": "playwright test tests/authenticated/dispatch.spec.ts",
+    "test:ui": "playwright test --ui",
+    "test:list": "playwright test --list",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "dotenv": "^17.0.0",
+    "typescript": "^5.9.0"
+  }
+}
