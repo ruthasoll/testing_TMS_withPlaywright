@@ -27,11 +27,17 @@ All modes block business-changing API requests, including creates, edits, deleti
 ```powershell
 npm.cmd run test:public  # No account needed: redirects, required fields, mocked login rejection
 npm.cmd run test:auth    # Requires the test data below
+npm.cmd run test:login   # Login form and validation
+npm.cmd run test:session # Login persistence, logout, and session expiry
+npm.cmd run test:access  # Organization switching and Maintenance Viewer restriction
+npm.cmd run test:dispatch # Shipment search and detail
 npm.cmd test            # Run the full suite; unavailable role/data checks report skips
 npm.cmd run test:ui     # Interactive runner
 npm.cmd run report      # Last HTML report
 npm.cmd run typecheck
 ```
+
+Append Playwright options to any area command, for example `npm run test:dispatch -- --headed` to watch the browser or `npm run test:session -- --grep "signing out"` to run one check. Use `--list` to preview the selected tests without contacting the app.
 
 ## Required test data
 
